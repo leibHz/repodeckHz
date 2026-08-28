@@ -1,0 +1,30 @@
+{
+  "name": "repocard",
+  "version": "0.6.0",
+  "private": true,
+  "description": "GitHub repos as embeddable web cards. A monorepo with 3 npm packages: @repocard/core (headless), repocard (web component), @repocard/react (React wrapper).",
+  "license": "MIT",
+  "workspaces": [
+    "packages/core",
+    "packages/web-component",
+    "packages/react"
+  ],
+  "scripts": {
+    "build": "bun run build:packages",
+    "build:packages": "bun run --filter '@repocard/core' build && bun run --filter 'repocard' build && bun run --filter '@repocard/react' build",
+    "build:core": "bun run --filter '@repocard/core' build",
+    "build:web-component": "bun run --filter 'repocard' build",
+    "build:react": "bun run --filter '@repocard/react' build",
+    "clean": "bun run --filter '*' clean && rm -rf node_modules",
+    "lint": "tsc --noEmit -p packages/core/tsconfig.json && tsc --noEmit -p packages/web-component/tsconfig.json"
+  },
+  "devDependencies": {
+    "@types/node": "^26.1.1",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tsup": "^8.5.1",
+    "typescript": "^5"
+  }
+}

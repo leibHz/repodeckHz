@@ -1,0 +1,8 @@
+﻿A lightweight npm package that turns any GitHub repository into an embeddable web card.
+
+Drop a config-repodeck/ folder in your repo, paste one HTML tag, and get a
+polished card with screenshots, a summary, and an expandable modal showing the
+full README. Works in plain HTML, React, Vue, Svelte, or any other stack.
+
+Three packages: @repodeck/core (headless data layer), repodeck (Custom Element),
+and @repodeck/react (thin wrapper for React projects).

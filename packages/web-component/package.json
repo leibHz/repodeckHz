@@ -1,0 +1,92 @@
+{
+  "name": "repocard",
+  "version": "0.6.0",
+  "description": "GitHub repos as embeddable web cards. A Custom Element that reads a config-repodeck/ folder from any repo and renders a polished card with an expandable modal. Works in any stack, no framework lock-in.",
+  "type": "module",
+  "license": "MIT",
+  "author": "repocard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bfrfrances/repocard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bfrfrances/repocard/issues"
+  },
+  "keywords": [
+    "repocard",
+    "github",
+    "card",
+    "embed",
+    "web-component",
+    "custom-element",
+    "portfolio",
+    "showcase"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/repocard.js",
+      "require": "./dist/repocard.cjs"
+    },
+    "./auto": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/repocard.js"
+    },
+    "./repodeck": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/repodeck.js",
+      "require": "./dist/repodeck.cjs"
+    },
+    "./repodeck/auto": {
+      "types": "./dist/types.d.ts",
+      "import": "./dist/repodeck.js"
+    }
+  },
+  "main": "./dist/repocard.cjs",
+  "module": "./dist/repocard.js",
+  "types": "./dist/types.d.ts",
+  "bin": {
+    "repodeck": "./dist/repodeck-cli.cjs"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup && tsup --config cli.tsup.config.cjs && cp src/types.d.ts dist/types.d.ts",
+    "build:cli": "tsup --config cli.tsup.config.cjs",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "bun run build"
+  },
+  "dependencies": {
+    "isomorphic-dompurify": "^3.18.0",
+    "marked": "^18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "tsup": {
+    "entry": {
+      "repocard": "src/repocard.ts",
+      "repodeck": "src/repodeck.ts"
+    },
+    "format": [
+      "esm",
+      "cjs"
+    ],
+    "dts": false,
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true,
+    "treeshake": false,
+    "minify": false,
+    "concurrency": 1,
+    "loader": {
+      ".css": "text"
+    },
+    "banner": {
+      "js": "#!/usr/bin/env node"
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "name": "@repocard/react",
+  "version": "0.6.0",
+  "description": "Thin React wrapper around the repocard web component. Gives React users a familiar <RepoDeck /> component.",
+  "type": "module",
+  "license": "MIT",
+  "author": "repocard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bfrfrances/repocard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bfrfrances/repocard/issues"
+  },
+  "keywords": [
+    "repocard",
+    "react",
+    "github",
+    "card",
+    "embed",
+    "portfolio"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "bun run build"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "dependencies": {
+    "repocard": "^0.6.0"
+  },
+  "tsup": {
+    "entry": ["src/index.tsx"],
+    "format": ["esm", "cjs"],
+    "dts": true,
+    "splitting": false,
+    "sourcemap": true,
+    "clean": true,
+    "treeshake": true,
+    "external": ["react", "react-dom", "repocard", "repocard/*"]
+  }
+}
