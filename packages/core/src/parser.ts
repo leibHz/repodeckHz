@@ -34,7 +34,25 @@ async function loadDOMPurify() {
     const mod = await import('isomorphic-dompurify');
     _DOMPurify = mod.default;
   }
+  installLinkHardeningHook();
   return _DOMPurify;
+}
+
+// Reverse-tabnabbing hardening. README links open in a new tab (target below),
+// so every <a> must carry rel="noopener noreferrer" — otherwise a malicious
+// repo could abuse window.opener to phish the embedding page. DOMPurify hooks
+// are registered on the shared singleton, so guard with a flag to stay
+// idempotent across calls.
+let _linkHookInstalled = false;
+function installLinkHardeningHook() {
+  if (_linkHookInstalled || !_DOMPurify) return;
+  _linkHookInstalled = true;
+  _DOMPurify.addHook('afterSanitizeAttributes', (node) => {
+    if (node.tagName === 'A') {
+      node.setAttribute('target', '_blank');
+      node.setAttribute('rel', 'noopener noreferrer');
+    }
+  });
 }
 
 const DEFAULT_RESUME_MAX = 280;

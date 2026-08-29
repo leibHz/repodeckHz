@@ -1160,8 +1160,8 @@ RepoCard.prototype._renderCardInner = function (data, preset) {
   // Frontmatter override (plan §16.18): per-project accent color + title.
   var fm = data.readme && !isFieldError(data.readme) && readme.frontmatter ? readme.frontmatter : null;
   var displayTitle = (fm && fm.title) ? fm.title : meta.repo;
-  if (fm && fm.accent) {
-    this.style.setProperty('--repocard-accent', fm.accent);
+  if (fm && isValidHexColor(fm.accent)) {
+    this.style.setProperty('--repocard-accent', fm.accent.trim());
     this.style.setProperty('--repocard-accent-soft', hexToRgba(fm.accent, 0.12));
   }
 
@@ -1408,6 +1408,13 @@ function hexToRgba(hex, alpha) {
   var g = parseInt(h.slice(2, 4), 16);
   var b = parseInt(h.slice(4, 6), 16);
   return 'rgba(' + r + ',' + g + ',' + b + ',' + alpha + ')';
+}
+
+// Frontmatter accent comes from a third-party repo — only accept strict hex
+// so the value is never treated as an arbitrary CSS token stream (which could
+// smuggle a url() into background for tracking/exfiltration).
+function isValidHexColor(v) {
+  return typeof v === 'string' && /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/.test(v.trim());
 }
 
 function stripMd(md) {
