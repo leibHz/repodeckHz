@@ -1,5 +1,7 @@
 # repocard
 
+> **Beta.** This project is in an early stage — APIs and behavior may change, and bugs are possible. Test before relying on it in production.
+
 GitHub repos as embeddable web cards.
 
 You add a `config-repodeck/` folder to your repo, paste one HTML tag where you want the card, and it pulls everything together: a short summary, a screenshot cover (with a `+N` badge when there are more), and a modal with the full README and a gallery. The card fetches data from the GitHub API at runtime, so you don't need a backend or build step.
