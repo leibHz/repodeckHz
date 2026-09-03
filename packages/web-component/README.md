@@ -1,27 +1,27 @@
-# repocard
+# repodeck
 
 > GitHub repos as embeddable web cards. A Custom Element that reads a `config-repodeck/` folder from any repo and renders a polished card with an expandable modal. Works in any stack, no framework lock-in.
 
-This is the **main product** of the repocard package family. Drop one `<repo-deck>` tag on any page, get a polished card with screenshots, resume, README, and stats.
+This is the **main product** of the repodeck package family. Drop one `<repo-deck>` tag on any page, get a polished card with screenshots, resume, README, and stats.
 
 The bundle registers two elements:
 
 - `<repo-deck>`, the current element (`repodeck.js`, use for new embeds).
-- `<repo-card>` / `<repocard-list>`, legacy elements (`repocard.js`, kept for backwards compatibility).
+- `<repo-deck>` / `<repodeck-list>`, legacy elements (`repodeck.js`, kept for backwards compatibility).
 
 ## Install
 
 ```bash
-npm install repocard
+npm install repodeck
 # or
-bun add repocard
+bun add repodeck
 ```
 
 ## Quick start (any HTML page)
 
 ```html
 <script type="module">
-  import 'repocard/repodeck/auto';
+  import 'repodeck/auto';
 </script>
 
 <repo-deck
@@ -49,7 +49,7 @@ config-repodeck/
 ### React / Next.js
 
 ```tsx
-import 'repocard/repodeck/auto';
+import 'repodeck/auto';
 
 export default function Page() {
   return <repo-deck owner="your-name" repo="your-repo" preset="standard" />;
@@ -60,7 +60,7 @@ export default function Page() {
 
 ```vue
 <script setup>
-import 'repocard/repodeck/auto';
+import 'repodeck/auto';
 </script>
 
 <template>
@@ -72,7 +72,7 @@ import 'repocard/repodeck/auto';
 
 ```svelte
 <script>
-  import 'repocard/repodeck/auto';
+  import 'repodeck/auto';
 </script>
 
 <repo-deck owner="your-name" repo="your-repo" preset="standard" />
@@ -81,7 +81,7 @@ import 'repocard/repodeck/auto';
 ### Plain HTML (CDN via unpkg)
 
 ```html
-<script type="module" src="https://unpkg.com/repocard/dist/repodeck.js"></script>
+<script type="module" src="https://unpkg.com/repodeck/dist/repodeck.js"></script>
 <repo-deck owner="your-name" repo="your-repo"></repo-deck>
 ```
 
@@ -115,7 +115,7 @@ Screenshots load from `raw.githubusercontent.com` as PNG or JPEG. By default the
 
 ```html
 <script type="module">
-  import 'repocard/repodeck/auto';
+  import 'repodeck/auto';
 </script>
 
 <repodeck-list
@@ -146,7 +146,7 @@ card.addEventListener('repodeck:modal-close', () => console.log('modal closed'))
 ## Public API
 
 ```js
-import { RepoDeckAPI } from 'repocard/repodeck';
+import { RepoDeckAPI } from 'repodeck';
 
 // i18n
 RepoDeckAPI.setLocale('pt');
@@ -217,7 +217,7 @@ tags: library, charts
 ></repo-deck>
 ```
 
-Calls the GitHub REST API directly from the browser (CORS-friendly). Subject to the 60 req/h anonymous rate limit. For high-traffic sites, point `data-url` to a self-hosted `@repocard/core` endpoint instead.
+Calls the GitHub REST API directly from the browser (CORS-friendly). Subject to the 60 req/h anonymous rate limit. For high-traffic sites, point `data-url` to a self-hosted `@repodeck/core` endpoint instead.
 
 ## Debugging
 

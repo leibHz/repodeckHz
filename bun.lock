@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "repocard",
+      "name": "repodeck",
       "devDependencies": {
         "@types/node": "^26.1.1",
         "@types/react": "^19.2.17",
@@ -15,7 +15,7 @@
       },
     },
     "packages/core": {
-      "name": "@repocard/core",
+      "name": "@repodeck/core",
       "version": "0.6.0",
       "dependencies": {
         "isomorphic-dompurify": "^3.18.0",
@@ -23,10 +23,10 @@
       },
     },
     "packages/react": {
-      "name": "@repocard/react",
+      "name": "@repodeck/react",
       "version": "0.6.0",
       "dependencies": {
-        "repocard": "workspace:*",
+        "repodeck": "^0.6.0",
       },
       "peerDependencies": {
         "react": ">=18",
@@ -34,7 +34,7 @@
       },
     },
     "packages/web-component": {
-      "name": "repocard",
+      "name": "repodeck",
       "version": "0.6.0",
       "bin": {
         "repodeck": "./dist/repodeck-cli.cjs",
@@ -130,9 +130,9 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@repocard/core": ["@repocard/core@workspace:packages/core"],
+    "@repodeck/core": ["@repodeck/core@workspace:packages/core"],
 
-    "@repocard/react": ["@repocard/react@workspace:packages/react"],
+    "@repodeck/react": ["@repodeck/react@workspace:packages/react"],
 
     "@rollup/rollup-android-arm-eabi": ["@rollup/rollup-android-arm-eabi@4.62.2", "", { "os": "android", "cpu": "arm" }, "sha512-6o7ZLZK+BeenkZCFNDXqpbjw9bD6nuWonvS/lwQJp7NoVVxm6p3qE7qQ5jGuBjiFsgvqjD8mZAU5oWxTmbOeOg=="],
 
@@ -288,7 +288,7 @@
 
     "readdirp": ["readdirp@4.1.2", "", {}, "sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg=="],
 
-    "repocard": ["repocard@workspace:packages/web-component"],
+    "repodeck": ["repodeck@workspace:packages/web-component"],
 
     "require-from-string": ["require-from-string@2.0.2", "", {}, "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="],
 

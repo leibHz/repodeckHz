@@ -1,19 +1,19 @@
 {
-  "name": "@repocard/react",
+  "name": "@repodeck/react",
   "version": "0.6.0",
-  "description": "Thin React wrapper around the repocard web component. Gives React users a familiar <RepoDeck /> component.",
+  "description": "Thin React wrapper around the repodeck web component. Gives React users a familiar <RepoDeck /> component.",
   "type": "module",
   "license": "MIT",
-  "author": "repocard",
+  "author": "repodeck",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bfrfrances/repocard.git"
+    "url": "https://github.com/leibHz/repodeck.git"
   },
   "bugs": {
-    "url": "https://github.com/bfrfrances/repocard/issues"
+    "url": "https://github.com/leibHz/repodeck/issues"
   },
   "keywords": [
-    "repocard",
+    "repodeck",
     "react",
     "github",
     "card",
@@ -48,7 +48,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "repocard": "^0.6.0"
+    "repodeck": "^0.6.0"
   },
   "tsup": {
     "entry": ["src/index.tsx"],
@@ -58,6 +58,6 @@
     "sourcemap": true,
     "clean": true,
     "treeshake": true,
-    "external": ["react", "react-dom", "repocard", "repocard/*"]
+    "external": ["react", "react-dom", "repodeck", "repodeck/*"]
   }
 }

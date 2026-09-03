@@ -1,23 +1,23 @@
-# @repocard/core
+# @repodeck/core
 
-> Framework-free core for **repocard**: fetch, parse, and build GitHub repo card data. Zero DOM, zero dependencies.
+> Framework-free core for **repodeck**: fetch, parse, and build GitHub repo card data. Zero DOM, zero dependencies.
 
-This is the headless heart of the repocard package. It talks to the GitHub REST API, parses the response, and returns a normalized `CardData` object. No UI, no framework: use it in Node, Deno, Bun, the browser, or any server-side template engine.
+This is the headless heart of the repodeck package. It talks to the GitHub REST API, parses the response, and returns a normalized `CardData` object. No UI, no framework: use it in Node, Deno, Bun, the browser, or any server-side template engine.
 
 ## Install
 
 ```bash
-npm install @repocard/core
+npm install @repodeck/core
 # or
-bun add @repocard/core
+bun add @repodeck/core
 ```
 
 ## Quick start
 
 ```ts
-import { buildCardData } from '@repocard/core';
+import { buildCardData } from '@repodeck/core';
 
-const card = await buildCardData('repocard', 'taskflow', {
+const card = await buildCardData('repodeck', 'taskflow', {
   include: { readme: true, resume: true, screenshots: true },
   branch: 'main',
   configPath: 'config-repodeck',
@@ -110,7 +110,7 @@ resolveScreenshots(entries, owner, repo, branch) // → Screenshot[]
 ### Presets
 
 ```ts
-import { defaultPresets, registerPreset, getPreset, mergePresetWithUserConfig } from '@repocard/core';
+import { defaultPresets, registerPreset, getPreset, mergePresetWithUserConfig } from '@repodeck/core';
 
 defaultPresets.minimal    // title + 1 cover
 defaultPresets.standard   // title + resume + screenshot cover
@@ -138,7 +138,7 @@ class RepoDeckError extends Error {
 }
 ```
 
-Also exported as `RepoCardError` for backwards compatibility (same class).
+Also exported as `repodeckError` for backwards compatibility (same class).
 
 ## Frontmatter (README.md)
 
@@ -166,7 +166,7 @@ Pass `locale: 'pt'` and the builder tries `RESUME.pt.txt` before `RESUME.txt`, r
 In-memory singleton cache (Map) with TTL (5 min default):
 
 ```ts
-import { getCached, setCached, clearCache, buildCacheKey } from '@repocard/core';
+import { getCached, setCached, clearCache, buildCacheKey } from '@repodeck/core';
 ```
 
 ## License

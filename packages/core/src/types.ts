@@ -1,5 +1,5 @@
 /**
- * @repocard/core — types.ts
+ * @repodeck/core — types.ts
  *
  * Shared data shapes used by every module of the core and by the API contract.
  */
@@ -81,7 +81,7 @@ export interface RepoStats {
   defaultBranch: string;
   pushedAt: number; // epoch ms
   // Repo metadata — pulled from the same API call, eliminates the need to
-  // duplicate these in config-repocard frontmatter.
+  // duplicate these in config-repodeck frontmatter.
   /** Repo name (e.g. "my-project"). */
   repoName: string;
   /** GitHub description field. */

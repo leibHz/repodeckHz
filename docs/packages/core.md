@@ -1,4 +1,4 @@
-# `@repocard/core`
+# `@repodeck/core`
 
 Headless data layer. **No DOM, no UI**, just logic for fetching,
 parsing and assembling the typed `CardData` shape from a GitHub
@@ -8,7 +8,7 @@ API route, Astro page, Cloudflare Worker, plain Node script).
 ## Install
 
 ```sh
-npm install @repocard/core
+npm install @repodeck/core
 ```
 
 ## What's in the box
@@ -36,7 +36,7 @@ npm install @repocard/core
 ## High-level example
 
 ```ts
-import { buildCardData, RepoDeckError } from '@repocard/core';
+import { buildCardData, RepoDeckError } from '@repodeck/core';
 
 const card = await buildCardData('you', 'your-repo', {
   include: { readme: true, resume: true, screenshots: true, stats: true },
@@ -60,7 +60,7 @@ Every engine is also exposed as a class so you can compose it
 exactly how you want:
 
 ```ts
-import { GitHubClient, Cache, CardBuilder, RepoDeckError } from '@repocard/core';
+import { GitHubClient, Cache, CardBuilder, RepoDeckError } from '@repodeck/core';
 
 const client = new GitHubClient({ token: process.env.GITHUB_TOKEN, timeoutMs: 8000 });
 const cache = new Cache(5 * 60 * 1000); // 5-minute TTL
@@ -113,7 +113,7 @@ consumers that only call `parseResume` / `resolveScreenshots` /
 that lazy path:
 
 ```ts
-import { parseReadme } from '@repocard/core';
+import { parseReadme } from '@repodeck/core';
 const readme = await parseReadme(rawMarkdownText);
 console.log(readme.html); // sanitised HTML
 ```

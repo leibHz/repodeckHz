@@ -14,9 +14,9 @@ The card fetches everything from the GitHub API and renders it. Click the card t
 
 | Package | What it does |
 |---|---|
-| `@repocard/core` | Headless data layer. Fetches and parses config-repodeck/ contents. No DOM, no framework. |
+| `@repodeck/core` | Headless data layer. Fetches and parses config-repodeck/ contents. No DOM, no framework. |
 | `repodeck` | The `<repo-deck>` Custom Element. Works in any stack. |
-| `@repocard/react` | `<RepoDeck />` wrapper for React projects. |
+| `@repodeck/react` | `<RepoDeck />` wrapper for React projects. |
 
 ## Usage
 

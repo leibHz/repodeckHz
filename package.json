@@ -1,8 +1,8 @@
 {
-  "name": "repocard",
+  "name": "repodeck",
   "version": "0.6.0",
   "private": true,
-  "description": "GitHub repos as embeddable web cards. A monorepo with 3 npm packages: @repocard/core (headless), repocard (web component), @repocard/react (React wrapper).",
+  "description": "GitHub repos as embeddable web cards. A monorepo with 3 npm packages: @repodeck/core (headless), repodeck (web component), @repodeck/react (React wrapper).",
   "license": "MIT",
   "workspaces": [
     "packages/core",
@@ -11,10 +11,10 @@
   ],
   "scripts": {
     "build": "bun run build:packages",
-    "build:packages": "bun run --filter '@repocard/core' build && bun run --filter 'repocard' build && bun run --filter '@repocard/react' build",
-    "build:core": "bun run --filter '@repocard/core' build",
-    "build:web-component": "bun run --filter 'repocard' build",
-    "build:react": "bun run --filter '@repocard/react' build",
+    "build:packages": "bun run --filter '@repodeck/core' build && bun run --filter 'repodeck' build && bun run --filter '@repodeck/react' build",
+    "build:core": "bun run --filter '@repodeck/core' build",
+    "build:web-component": "bun run --filter 'repodeck' build",
+    "build:react": "bun run --filter '@repodeck/react' build",
     "clean": "bun run --filter '*' clean && rm -rf node_modules",
     "lint": "tsc --noEmit -p packages/core/tsconfig.json && tsc --noEmit -p packages/web-component/tsconfig.json"
   },

@@ -17,10 +17,9 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "repocard": ["../web-component/src/types.d.ts"],
-      "repocard/repodeck": ["../web-component/src/types.d.ts"],
-      "repocard/repodeck/auto": ["../web-component/src/types.d.ts"],
-      "repocard/*": ["../web-component/src/types.d.ts"]
+      "repodeck": ["../web-component/src/types.d.ts"],
+      "repodeck/auto": ["../web-component/src/types.d.ts"],
+      "repodeck/*": ["../web-component/src/types.d.ts"]
     }
   },
   "include": ["src"],

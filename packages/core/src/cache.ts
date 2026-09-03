@@ -1,5 +1,5 @@
 /**
- * @repocard/core — cache.ts
+ * @repodeck/core — cache.ts
  *
  * In-memory cache (Map) with TTL. Encapsulated in a `Cache` class so consumers
  * can create isolated instances or share a singleton. The interface is

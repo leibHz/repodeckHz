@@ -1,5 +1,5 @@
 /**
- * @repocard/core — parser.ts
+ * @repodeck/core — parser.ts
  *
  * Transforms raw text from GitHub into display-ready data.
  *

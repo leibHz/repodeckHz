@@ -89,8 +89,8 @@ window.RepoDeck.createAnalyticsAdapter((event) => {
 });
 ```
 
-ESM consumers can `import { RepoDeckAPI } from 'repocard/repodeck'` or
-use `@repocard/react`'s underlying web component instead.
+ESM consumers can `import { RepoDeckAPI } from 'repodeck'` or
+use `@repodeck/react`'s underlying web component instead.
 
 ## Layouts
 

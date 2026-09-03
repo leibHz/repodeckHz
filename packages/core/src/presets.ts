@@ -1,11 +1,11 @@
 /**
- * @repocard/core — presets.ts
+ * @repodeck/core — presets.ts
  *
  * Presets define "what shows on the compact card" vs "what is available in the
  * modal". Consumers can register their own preset without forking.
  */
 
-import { RepoCardError } from './errors';
+import { repodeckError } from './errors';
 import type { PresetDefinition, ResolvedConfig } from './types';
 
 export const defaultPresets: Record<string, PresetDefinition> = {
@@ -39,7 +39,7 @@ export function registerPreset(name: string, definition: PresetDefinition): void
 export function getPreset(name: string): PresetDefinition {
   const def = registry.get(name);
   if (!def) {
-    throw new RepoCardError(
+    throw new repodeckError(
       'INVALID_CONFIG',
       `Unknown preset "${name}". Available: ${[...registry.keys()].join(', ')}`,
     );

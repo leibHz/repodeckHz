@@ -1,8 +1,8 @@
 /**
- * @repocard/core — public barrel.
+ * @repodeck/core — public barrel.
  *
  * Server-side entry point. Bundles every core module so the API route and any
- * headless consumer can `import { ... } from '@/lib/repocard/core'`.
+ * headless consumer can `import { ... } from '@/lib/repodeck/core'`.
  */
 
 export * from './types';

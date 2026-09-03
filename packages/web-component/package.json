@@ -1,19 +1,19 @@
 {
-  "name": "repocard",
+  "name": "repodeck",
   "version": "0.6.0",
   "description": "GitHub repos as embeddable web cards. A Custom Element that reads a config-repodeck/ folder from any repo and renders a polished card with an expandable modal. Works in any stack, no framework lock-in.",
   "type": "module",
   "license": "MIT",
-  "author": "repocard",
+  "author": "repodeck",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bfrfrances/repocard.git"
+    "url": "https://github.com/leibHz/repodeck.git"
   },
   "bugs": {
-    "url": "https://github.com/bfrfrances/repocard/issues"
+    "url": "https://github.com/leibHz/repodeck/issues"
   },
   "keywords": [
-    "repocard",
+    "repodeck",
     "github",
     "card",
     "embed",
@@ -25,25 +25,16 @@
   "exports": {
     ".": {
       "types": "./dist/types.d.ts",
-      "import": "./dist/repocard.js",
-      "require": "./dist/repocard.cjs"
-    },
-    "./auto": {
-      "types": "./dist/types.d.ts",
-      "import": "./dist/repocard.js"
-    },
-    "./repodeck": {
-      "types": "./dist/types.d.ts",
       "import": "./dist/repodeck.js",
       "require": "./dist/repodeck.cjs"
     },
-    "./repodeck/auto": {
+    "./auto": {
       "types": "./dist/types.d.ts",
       "import": "./dist/repodeck.js"
     }
   },
-  "main": "./dist/repocard.cjs",
-  "module": "./dist/repocard.js",
+  "main": "./dist/repodeck.cjs",
+  "module": "./dist/repodeck.js",
   "types": "./dist/types.d.ts",
   "bin": {
     "repodeck": "./dist/repodeck-cli.cjs"
@@ -68,7 +59,6 @@
   },
   "tsup": {
     "entry": {
-      "repocard": "src/repocard.ts",
       "repodeck": "src/repodeck.ts"
     },
     "format": [

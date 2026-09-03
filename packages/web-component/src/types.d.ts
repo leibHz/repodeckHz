@@ -1,6 +1,6 @@
-// Type declarations for the repocard web component package.
+// Type declarations for the repodeck web component package.
 
-export interface RepoCardLocaleStrings {
+export interface repodeckLocaleStrings {
   loading?: string;
   errorTitle?: string;
   viewDetails?: string;
@@ -22,7 +22,7 @@ export interface RepoCardLocaleStrings {
   [key: string]: string | undefined;
 }
 
-export interface RepoCardAnalyticsEvent {
+export interface repodeckAnalyticsEvent {
   type: 'viewed' | 'modal_open' | 'modal_close' | 'error' | string;
   name: string;
   owner: string | null;
@@ -31,10 +31,10 @@ export interface RepoCardAnalyticsEvent {
   timestamp: number;
 }
 
-export type AnalyticsHandler = (event: RepoCardAnalyticsEvent) => void;
+export type AnalyticsHandler = (event: repodeckAnalyticsEvent) => void;
 
-export interface RepoCardAPI {
-  setLocale(locale: string, strings?: RepoCardLocaleStrings): void;
+export interface repodeckAPI {
+  setLocale(locale: string, strings?: repodeckLocaleStrings): void;
   getLocale(): string;
   t(key: string): string;
   createAnalyticsAdapter(handler: AnalyticsHandler): void;
@@ -43,7 +43,7 @@ export interface RepoCardAPI {
 
 declare global {
   interface Window {
-    RepoCard: RepoCardAPI;
+    repodeck: repodeckAPI;
   }
 }
 
@@ -51,7 +51,7 @@ declare global {
   namespace React {
     namespace JSX {
       interface IntrinsicElements {
-        'repo-card': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'repo-deck': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
           owner?: string;
           repo?: string;
           branch?: string;
@@ -68,7 +68,7 @@ declare global {
           locale?: string;
           token?: string;
         };
-        'repocard-list': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
+        'repodeck-list': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement> & {
           repos?: string;
           preset?: string;
           theme?: string;
@@ -129,5 +129,5 @@ declare global {
   }
 }
 
-export const RepoCard: RepoCardAPI;
-export default RepoCard;
+export const repodeck: repodeckAPI;
+export default repodeck;

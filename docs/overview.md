@@ -15,18 +15,18 @@ itself evolves, so there is no second source of truth to keep in sync.
 ```
 repodeck/
 ├── packages/
-│   ├── core/              @repocard/core        Headless data layer. No DOM.
+│   ├── core/              @repodeck/core        Headless data layer. No DOM.
 │   ├── web-component/     repodeck              <repo-deck> Custom Element.
-│   └── react/             @repocard/react       <RepoDeck> wrapper.
+│   └── react/             @repodeck/react       <RepoDeck> wrapper.
 ```
 
 | Package             | Install              | When to use                                                                          |
 |---------------------|----------------------|--------------------------------------------------------------------------------------|
-| `repodeck`          | `npm i repocard`     | The default. Plain HTML, Vue, Svelte, Angular, anything with a `<script>` tag.        |
-| `@repocard/react`   | `npm i @repocard/react repocard` | React users. Idiomatic `<RepoDeck owner="…" repo="…" />` JSX.                |
-| `@repocard/core`    | `npm i @repocard/core`       | SSR, SSG, custom templates, build-time batch fetching, server-to-server pipelines. |
+| `repodeck`          | `npm i repodeck`     | The default. Plain HTML, Vue, Svelte, Angular, anything with a `<script>` tag.        |
+| `@repodeck/react`   | `npm i @repodeck/react repodeck` | React users. Idiomatic `<RepoDeck owner="…" repo="…" />` JSX.                |
+| `@repodeck/core`    | `npm i @repodeck/core`       | SSR, SSG, custom templates, build-time batch fetching, server-to-server pipelines. |
 
-If you only need a card on a page, `npm i repocard` is enough.
+If you only need a card on a page, `npm i repodeck` is enough.
 
 ## How a card is built
 

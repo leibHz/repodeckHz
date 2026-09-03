@@ -45,7 +45,7 @@ and exits `0`.
 ## `repodeck validate <owner>/<repo>`
 
 Probes a public GitHub repository for a `config-repodeck/` folder
-and prints a field-by-field report. Reuses `@repocard/core`'s
+and prints a field-by-field report. Reuses `@repodeck/core`'s
 `CardBuilder` so what you see is exactly what the card would see.
 
 ```sh

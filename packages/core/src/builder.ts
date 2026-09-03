@@ -1,5 +1,5 @@
 /**
- * @repocard/core — builder.ts
+ * @repodeck/core — builder.ts
  *
  * The orchestrator. `CardBuilder` takes a `GitHubClient` (dependency injection)
  * and an optional `Cache`, then builds a `CardData` object by firing only the
@@ -7,10 +7,10 @@
  *
  * Per-field error model (closed decision — plan §3.3 / §15):
  *   If RESUME.txt is missing but README.md exists, the card still builds with
- *   `resume` carrying a RepoCardError. Never "all-or-nothing".
+ *   `resume` carrying a repodeckError. Never "all-or-nothing".
  */
 
-import { RepoCardError } from './errors';
+import { repodeckError } from './errors';
 import { GitHubClient } from './github-client';
 import { Cache } from './cache';
 import { dbgLog, isDebugEnabled } from './debug';
@@ -29,14 +29,14 @@ import type {
 
 export function validateConfig(owner: unknown, repo: unknown, options?: BuildOptions): void {
   if (typeof owner !== 'string' || !owner.trim()) {
-    throw new RepoCardError('INVALID_CONFIG', '`owner` is required.');
+    throw new repodeckError('INVALID_CONFIG', '`owner` is required.');
   }
   if (typeof repo !== 'string' || !repo.trim()) {
-    throw new RepoCardError('INVALID_CONFIG', '`repo` is required.');
+    throw new repodeckError('INVALID_CONFIG', '`repo` is required.');
   }
   const cp = options?.configPath;
   if (cp !== undefined && (typeof cp !== 'string' || cp.includes('..'))) {
-    throw new RepoCardError('INVALID_CONFIG', '`configPath` must be a safe string.');
+    throw new repodeckError('INVALID_CONFIG', '`configPath` must be a safe string.');
   }
 }
 
@@ -120,7 +120,7 @@ export class CardBuilder {
       if (raw === null) {
         raw = await this.client.fetchFileContent(owner, repo, joinPath(configPath, 'RESUME.txt'), branch);
       }
-      if (raw === null) throw new RepoCardError('NOT_FOUND', 'RESUME.txt not found in config folder.', { field: 'resume' });
+      if (raw === null) throw new repodeckError('NOT_FOUND', 'RESUME.txt not found in config folder.', { field: 'resume' });
       return { ...parseResume(raw, { maxChars: options.resumeMaxChars }), locale: usedLocale };
     });
   }
@@ -128,7 +128,7 @@ export class CardBuilder {
   private async fetchReadme(owner: string, repo: string, branch: string, configPath: string): Promise<{ key: FieldKey; data: FieldResult<ReadmeData> | null }> {
     return this.safeFetch('readme', async () => {
       const raw = await this.client.fetchFileContent(owner, repo, joinPath(configPath, 'README.md'), branch);
-      if (raw === null) throw new RepoCardError('NOT_FOUND', 'README.md not found in config folder.', { field: 'readme' });
+      if (raw === null) throw new repodeckError('NOT_FOUND', 'README.md not found in config folder.', { field: 'readme' });
       return await parseReadme(raw);
     });
   }
@@ -146,12 +146,12 @@ export class CardBuilder {
     });
   }
 
-  /** Wraps a fetcher in try/catch, converting errors to per-field RepoCardError. */
+  /** Wraps a fetcher in try/catch, converting errors to per-field repodeckError. */
   private async safeFetch<T>(key: FieldKey, fn: () => Promise<T>): Promise<{ key: FieldKey; data: FieldResult<T> | null }> {
     try {
       return { key, data: await fn() };
     } catch (err) {
-      const e = err instanceof RepoCardError ? err : new RepoCardError('NETWORK_ERROR', String(err), { field: key, cause: err });
+      const e = err instanceof repodeckError ? err : new repodeckError('NETWORK_ERROR', String(err), { field: key, cause: err });
       return { key, data: { error: e } as FieldResult<T> };
     }
   }

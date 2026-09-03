@@ -1,5 +1,5 @@
 /**
- * @repocard/core — layout.ts
+ * @repodeck/core — layout.ts
  *
  * Decides how screenshots are laid out.
  *  - 1 image  → `single` (cover)

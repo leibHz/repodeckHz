@@ -5,8 +5,8 @@
  * `error.code` instead of parsing message strings.
  *
  * The class is exported under two names — `RepoDeckError` is the canonical
- * name going forward; `RepoCardError` is kept as an alias for the legacy
- * `repocard` rebrand that still appears in some docs and modules. Both
+ * name going forward; `repodeckError` is kept as an alias for the legacy
+ * `repodeck` rebrand that still appears in some docs and modules. Both
  * resolve to the same class, so `instanceof` checks work either way.
  */
 
@@ -17,8 +17,8 @@ export type RepoDeckErrorCode =
   | 'NETWORK_ERROR'
   | 'INVALID_CONFIG';
 
-/** Legacy alias used by modules still on the `repocard` branding. */
-export type RepoCardErrorCode = RepoDeckErrorCode;
+/** Legacy alias used by modules still on the `repodeck` branding. */
+export type repodeckErrorCode = RepoDeckErrorCode;
 
 export class RepoDeckError extends Error {
   code: RepoDeckErrorCode;
@@ -49,5 +49,5 @@ export class RepoDeckError extends Error {
   }
 }
 
-// Back-compat alias — same class, just re-exported under the upstream `repocard` name.
-export const RepoCardError = RepoDeckError;
+// Back-compat alias — same class, just re-exported under the upstream `repodeck` name.
+export const repodeckError = RepoDeckError;

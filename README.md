@@ -1,4 +1,4 @@
-# repocard
+# repodeck
 
 > **Beta.** This project is in an early stage — APIs and behavior may change, and bugs are possible. Test before relying on it in production.
 
@@ -14,18 +14,18 @@ This is a monorepo with three npm packages:
 
 | Package | What it does | Install |
 |---|---|---|
-| [`@repocard/core`](./packages/core) | Headless data layer. Fetch, parse, build. No DOM. | `npm i @repocard/core` |
-| [`repocard`](./packages/web-component) | `<repo-deck>` Custom Element (the main thing) + legacy `<repo-card>`. | `npm i repocard` |
-| [`@repocard/react`](./packages/react) | `<RepoDeck />` wrapper for React. | `npm i @repocard/react repocard` |
+| [`@repodeck/core`](./packages/core) | Headless data layer. Fetch, parse, build. No DOM. | `npm i @repodeck/core` |
+| [`repodeck`](./packages/web-component) | `<repo-deck>` Custom Element (the main thing) + legacy `<repo-deck>`. | `npm i repodeck` |
+| [`@repodeck/react`](./packages/react) | `<RepoDeck />` wrapper for React. | `npm i @repodeck/react repodeck` |
 
-If you just want to drop a card on a page, you only need `repocard`. The core package is there for people who want the data without any UI (SSR, static site generators, custom templates).
+If you just want to drop a card on a page, you only need `repodeck`. The core package is there for people who want the data without any UI (SSR, static site generators, custom templates).
 
 ## Quick start
 
 ### HTML (any page)
 
 ```html
-<script src="https://unpkg.com/repocard@latest/dist/repodeck.js"></script>
+<script src="https://unpkg.com/repodeck@latest/dist/repodeck.js"></script>
 
 <repo-deck
   owner="your-name"
@@ -37,12 +37,12 @@ If you just want to drop a card on a page, you only need `repocard`. The core pa
 
 That's it. The component registers itself and renders once it enters the DOM.
 
-The legacy `repocard.js` bundle still works (registers `<repo-card>`); new embeds should use `repodeck.js`.
+The legacy `repodeck.js` bundle still works (registers `<repo-deck>`); new embeds should use `repodeck.js`.
 
 ### React / Next.js
 
 ```tsx
-import { RepoDeck } from '@repocard/react';
+import { RepoDeck } from '@repodeck/react';
 
 <RepoDeck owner="your-name" repo="your-repo" preset="standard" showStats />
 ```
@@ -50,7 +50,7 @@ import { RepoDeck } from '@repocard/react';
 ### Headless (SSR, SSG, any template engine)
 
 ```ts
-import { buildCardData } from '@repocard/core';
+import { buildCardData } from '@repodeck/core';
 
 const card = await buildCardData('your-name', 'your-repo', {
   include: { readme: true, resume: true, screenshots: true },
@@ -164,11 +164,11 @@ Every package can produce verbose logs. Nothing is logged by default.
 ## Project structure
 
 ```
-repocard/
+repodeck/
 ├── packages/
-│   ├── core/              @repocard/core
-│   ├── web-component/     repocard
-│   └── react/             @repocard/react
+│   ├── core/              @repodeck/core
+│   ├── web-component/     repodeck
+│   └── react/             @repodeck/react
 ├── config-repodeck/       example config (this repo eats its own dog food)
 └── package.json           workspace root
 ```

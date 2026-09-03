@@ -6,15 +6,15 @@ truth is the TypeScript declarations in each package's
 
 ## Table of contents
 
-- [`@repocard/core`](#core)
+- [`@repodeck/core`](#core)
 - [`repodeck` (web component)](#web-component)
-- [`@repocard/react`](#react)
+- [`@repodeck/react`](#react)
 
 ---
 
 <a id="core"></a>
 
-## `@repocard/core`
+## `@repodeck/core`
 
 ```ts
 import {
@@ -50,7 +50,7 @@ import {
 
   // Errors
   RepoDeckError,
-} from '@repocard/core';
+} from '@repodeck/core';
 ```
 
 ### Types
@@ -194,7 +194,7 @@ window.RepoDeck
   .provideInlineData(cardData: CardData): void;
 
 // Or as a named export:
-import { RepoDeckAPI } from 'repocard/repodeck';
+import { RepoDeckAPI } from 'repodeck';
 ```
 
 ### Types
@@ -223,10 +223,10 @@ block in the document, or from the most recently provided
 
 <a id="react"></a>
 
-## `@repocard/react`
+## `@repodeck/react`
 
 ```tsx
-import { RepoDeck, RepoDeckList } from '@repocard/react';
+import { RepoDeck, RepoDeckList } from '@repodeck/react';
 
 <RepoDeck
   owner={owner}

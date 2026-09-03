@@ -1,19 +1,19 @@
 {
-  "name": "@repocard/core",
+  "name": "@repodeck/core",
   "version": "0.6.0",
-  "description": "Framework-free core for repocard: fetch, parse, and build GitHub repo card data. Zero DOM, zero dependencies.",
+  "description": "Framework-free core for repodeck: fetch, parse, and build GitHub repo card data. Zero DOM, zero dependencies.",
   "type": "module",
   "license": "MIT",
-  "author": "repocard",
+  "author": "repodeck",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bfrfrances/repocard.git"
+    "url": "https://github.com/leibHz/repodeck.git"
   },
   "bugs": {
-    "url": "https://github.com/bfrfrances/repocard/issues"
+    "url": "https://github.com/leibHz/repodeck/issues"
   },
   "keywords": [
-    "repocard",
+    "repodeck",
     "github",
     "card",
     "embed",

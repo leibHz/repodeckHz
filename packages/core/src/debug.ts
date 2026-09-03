@@ -1,5 +1,5 @@
 /**
- * @repocard/core — debug.ts
+ * @repodeck/core — debug.ts
  *
  * Minimal opt-in debug logging. Enabled per-call via `debug: true` in the
  * options object, or globally via the `REPODECK_DEBUG=1` environment variable.

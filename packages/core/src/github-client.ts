@@ -1,15 +1,15 @@
 /**
- * @repocard/core — github-client.ts
+ * @repodeck/core — github-client.ts
  *
  * All communication with the GitHub REST API. Encapsulated in a `GitHubClient`
  * class so consumers can configure token/retry/timeout once and inject the
  * instance wherever needed (dependency injection).
  *
  * 404 → returns null (so a missing field doesn't break the whole card);
- * any other failure throws RepoCardError.
+ * any other failure throws repodeckError.
  */
 
-import { RepoCardError } from './errors';
+import { repodeckError } from './errors';
 import { dbgLog, isDebugEnabled } from './debug';
 import type { DirectoryEntry, RateLimitInfo, RepoStats } from './types';
 
@@ -52,7 +52,7 @@ export class GitHubClient {
     const h: Record<string, string> = {
       Accept: 'application/vnd.github+json',
       'X-GitHub-Api-Version': '2022-11-28',
-      'User-Agent': 'repocard-core',
+      'User-Agent': 'repodeck-core',
     };
     if (this.token) h.Authorization = `Bearer ${this.token}`;
     return h;
@@ -91,7 +91,7 @@ export class GitHubClient {
         }
       }
     }
-    throw new RepoCardError('NETWORK_ERROR', `Network error fetching ${url}`, { cause: lastErr });
+    throw new repodeckError('NETWORK_ERROR', `Network error fetching ${url}`, { cause: lastErr });
   }
 
   private static decodeBase64(b64: string): string {
@@ -133,7 +133,7 @@ export class GitHubClient {
     const url = `${API_BASE}/repos/${enc(owner)}/${enc(repo)}`;
     const res = await this.fetchWithRetry(url);
     if (res.status === 404) {
-      throw new RepoCardError('NOT_FOUND', `Repository ${owner}/${repo} not found.`, { status: 404 });
+      throw new repodeckError('NOT_FOUND', `Repository ${owner}/${repo} not found.`, { status: 404 });
     }
     this.assertOk(res, 'repo stats');
     const data = (await res.json()) as {
@@ -172,7 +172,7 @@ export class GitHubClient {
   async checkRateLimit(): Promise<RateLimitInfo> {
     const res = await this.fetchWithRetry(`${API_BASE}/rate_limit`);
     if (!res.ok) {
-      throw new RepoCardError('NETWORK_ERROR', `rate_limit endpoint returned ${res.status}`, { status: res.status });
+      throw new repodeckError('NETWORK_ERROR', `rate_limit endpoint returned ${res.status}`, { status: res.status });
     }
     const data = (await res.json()) as { resources: { core: { remaining: number; limit: number; reset: number } } };
     return { remaining: data.resources.core.remaining, limit: data.resources.core.limit, resetAt: data.resources.core.reset * 1000 };
@@ -180,17 +180,17 @@ export class GitHubClient {
 
   private assertOk(res: Response, context: string): void {
     if (res.status === 401) {
-      throw new RepoCardError('UNAUTHORIZED', 'GitHub token is invalid or expired.', { status: 401 });
+      throw new repodeckError('UNAUTHORIZED', 'GitHub token is invalid or expired.', { status: 401 });
     }
     if (res.status === 403) {
       const remaining = res.headers.get('x-ratelimit-remaining');
       if (remaining === '0') {
-        throw new RepoCardError('RATE_LIMITED', 'GitHub API rate limit exceeded.', { status: 403 });
+        throw new repodeckError('RATE_LIMITED', 'GitHub API rate limit exceeded.', { status: 403 });
       }
-      throw new RepoCardError('UNAUTHORIZED', 'GitHub API returned 403 Forbidden.', { status: 403 });
+      throw new repodeckError('UNAUTHORIZED', 'GitHub API returned 403 Forbidden.', { status: 403 });
     }
     if (!res.ok) {
-      throw new RepoCardError('NETWORK_ERROR', `GitHub API ${res.status} for ${context}`, { status: res.status });
+      throw new repodeckError('NETWORK_ERROR', `GitHub API ${res.status} for ${context}`, { status: res.status });
     }
   }
 }

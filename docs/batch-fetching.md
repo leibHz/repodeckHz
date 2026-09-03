@@ -40,7 +40,7 @@ throw `RepoDeckError('UNAUTHORIZED')` if you forget the token.
 ## Signature
 
 ```ts
-import { fetchMultipleReposViaGraphQL } from '@repocard/core';
+import { fetchMultipleReposViaGraphQL } from '@repodeck/core';
 
 const cards = await fetchMultipleReposViaGraphQL(
   [
@@ -144,7 +144,7 @@ as `CardBuilder`:
 
 ```astro
 ---
-import { fetchMultipleReposViaGraphQL } from '@repocard/core';
+import { fetchMultipleReposViaGraphQL } from '@repodeck/core';
 
 const cards = await fetchMultipleReposViaGraphQL(
   [
@@ -184,7 +184,7 @@ const cards = await fetchMultipleReposViaGraphQL(
 
 ```tsx
 // app/page.tsx
-import { fetchMultipleReposViaGraphQL } from '@repocard/core';
+import { fetchMultipleReposViaGraphQL } from '@repodeck/core';
 
 export const dynamic = 'force-static';
 
@@ -231,7 +231,7 @@ export default async function Page() {
 
 ## Next
 
-- [`@repocard/core` reference](./packages/core.md) for the full
+- [`@repodeck/core` reference](./packages/core.md) for the full
   `fetchMultipleReposViaGraphQL` and `prefetchCardData` signatures.
 - [Build-time data](./build-time.md) for the REST prefetch path and the
   `<repo-deck data-url="inline">` contract that consumes both.

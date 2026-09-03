@@ -9,7 +9,7 @@ basically infinite.
 
 There are two halves to making this work:
 
-1. **`prefetchCardData()`** in `@repocard/core` fetches many repos
+1. **`prefetchCardData()`** in `@repodeck/core` fetches many repos
    in parallel and returns a serialisable map.
 2. **`data-url="inline"`** in the `<repo-deck>` web component:
    consumes a `<script type="application/json">` block and skips
@@ -18,7 +18,7 @@ There are two halves to making this work:
 ## `prefetchCardData(targets, options?)`
 
 ```ts
-import { prefetchCardData } from '@repocard/core';
+import { prefetchCardData } from '@repodeck/core';
 
 const cards = await prefetchCardData(
   [
@@ -93,7 +93,7 @@ If you'd rather pass the data as a JS object instead of a `<script>`
 tag, set it programmatically after import:
 
 ```js
-import { RepoDeckAPI } from 'repocard/repodeck';
+import { RepoDeckAPI } from 'repodeck';
 
 RepoDeckAPI.provideInlineData({ /* CardData */ });
 
@@ -104,7 +104,7 @@ RepoDeckAPI.provideInlineData({ /* CardData */ });
 
 ```astro
 ---
-import { prefetchCardData } from '@repocard/core';
+import { prefetchCardData } from '@repodeck/core';
 
 const data = await prefetchCardData(
   [
@@ -143,7 +143,7 @@ Visitors see fully rendered cards on first paint, zero GitHub calls.
 
 ```tsx
 // app/page.tsx
-import { prefetchCardData } from '@repocard/core';
+import { prefetchCardData } from '@repodeck/core';
 
 export const dynamic = 'force-static';
 
@@ -200,7 +200,7 @@ and serving unlimited visitors from a CDN.
 - [Batch fetching with GraphQL](./batch-fetching.md) for the
   GraphQL transport: collapses 20 cards into 1 GraphQL request (token
   required).
-- [`@repocard/core` reference](./packages/core.md) for the full
+- [`@repodeck/core` reference](./packages/core.md) for the full
   `prefetchCardData` signature and options.
 - [`repodeck` reference](./packages/web-component.md) for the
   `data-url="inline"` contract.
