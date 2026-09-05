@@ -12,16 +12,16 @@ The bundle registers two elements:
 ## Install
 
 ```bash
-npm install repodeck
+npm install @repodeckhz/web
 # or
-bun add repodeck
+bun add @repodeckhz/web
 ```
 
 ## Quick start (any HTML page)
 
 ```html
 <script type="module">
-  import 'repodeck/auto';
+  import '@repodeckhz/web/auto';
 </script>
 
 <repo-deck
@@ -49,7 +49,7 @@ config-repodeck/
 ### React / Next.js
 
 ```tsx
-import 'repodeck/auto';
+import '@repodeckhz/web/auto';
 
 export default function Page() {
   return <repo-deck owner="your-name" repo="your-repo" preset="standard" />;
@@ -60,7 +60,7 @@ export default function Page() {
 
 ```vue
 <script setup>
-import 'repodeck/auto';
+import '@repodeckhz/web/auto';
 </script>
 
 <template>
@@ -72,7 +72,7 @@ import 'repodeck/auto';
 
 ```svelte
 <script>
-  import 'repodeck/auto';
+  import '@repodeckhz/web/auto';
 </script>
 
 <repo-deck owner="your-name" repo="your-repo" preset="standard" />
@@ -81,7 +81,7 @@ import 'repodeck/auto';
 ### Plain HTML (CDN via unpkg)
 
 ```html
-<script type="module" src="https://unpkg.com/repodeck/dist/repodeck.js"></script>
+<script type="module" src="https://unpkg.com/@repodeckhz/web/dist/repodeck.js"></script>
 <repo-deck owner="your-name" repo="your-repo"></repo-deck>
 ```
 
@@ -115,7 +115,7 @@ Screenshots load from `raw.githubusercontent.com` as PNG or JPEG. By default the
 
 ```html
 <script type="module">
-  import 'repodeck/auto';
+  import '@repodeckhz/web/auto';
 </script>
 
 <repodeck-list
@@ -146,7 +146,7 @@ card.addEventListener('repodeck:modal-close', () => console.log('modal closed'))
 ## Public API
 
 ```js
-import { RepoDeckAPI } from 'repodeck';
+import { RepoDeckAPI } from '@repodeckhz/web';
 
 // i18n
 RepoDeckAPI.setLocale('pt');
@@ -217,7 +217,7 @@ tags: library, charts
 ></repo-deck>
 ```
 
-Calls the GitHub REST API directly from the browser (CORS-friendly). Subject to the 60 req/h anonymous rate limit. For high-traffic sites, point `data-url` to a self-hosted `@repodeck/core` endpoint instead.
+Calls the GitHub REST API directly from the browser (CORS-friendly). Subject to the 60 req/h anonymous rate limit. For high-traffic sites, point `data-url` to a self-hosted `@repodeckhz/core` endpoint instead.
 
 ## Debugging
 

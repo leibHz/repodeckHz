@@ -1,5 +1,5 @@
 /**
- * @repodeck/react — thin React wrapper around the <repo-deck> web component.
+ * @repodeckhz/react — thin React wrapper around the <repo-deck> web component.
  *
  * Plan §2: "wrapper fino em cima do web component, opcional/futuro".
  * This gives React users a familiar <RepoDeck /> component instead of
@@ -12,7 +12,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import 'repodeck/auto';
+import '@repodeckhz/web/auto';
 
 export interface RepoDeckProps {
   owner: string;
@@ -52,7 +52,7 @@ export interface RepoDeckProps {
  * React wrapper for the <repo-deck> Custom Element.
  *
  * @example
- * import { RepoDeck } from '@repodeck/react';
+ * import { RepoDeck } from '@repodeckhz/react';
  *
  * <RepoDeck owner="your-name" repo="your-repo" preset="standard" showStats />
  */
@@ -171,7 +171,7 @@ export interface RepoDeckListProps {
  * React wrapper for the <repodeck-list> Custom Element.
  *
  * @example
- * import { RepoDeckList } from '@repodeck/react';
+ * import { RepoDeckList } from '@repodeckhz/react';
  *
  * <RepoDeckList
  *   repos="your-name/project-a,your-name/project-b"

@@ -12,9 +12,9 @@ repodeck cards in any kind of site. Start at the
 - [The `config-repodeck/` folder](./config-folder.md), how the source repo declares what shows up on the card.
 
 ### Packages
-- [`@repodeck/core`](./packages/core.md), headless data layer (server-side / build-time).
-- [`repodeck` (web component)](./packages/web-component.md), the `<repo-deck>` Custom Element that ships as the main `repodeck` npm package.
-- [`@repodeck/react`](./packages/react.md), thin React wrapper around the web component.
+- [`@repodeckhz/core`](./packages/core.md), headless data layer (server-side / build-time).
+- [`@repodeckhz/web` (web component)](./packages/web-component.md), the `<repo-deck>` Custom Element that ships as the main `@repodeckhz/web` npm package.
+- [`@repodeckhz/react`](./packages/react.md), thin React wrapper around the web component.
 - [`repodeck` CLI](./packages/cli.md), `npx repodeck init` and `npx repodeck validate`.
 
 ### Guides

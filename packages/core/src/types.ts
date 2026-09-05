@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — types.ts
+ * @repodeckhz/core — types.ts
  *
  * Shared data shapes used by every module of the core and by the API contract.
  */

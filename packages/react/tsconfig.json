@@ -17,9 +17,9 @@
     "isolatedModules": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "repodeck": ["../web-component/src/types.d.ts"],
-      "repodeck/auto": ["../web-component/src/types.d.ts"],
-      "repodeck/*": ["../web-component/src/types.d.ts"]
+      "@repodeckhz/web": ["../web-component/src/types.d.ts"],
+      "@repodeckhz/web/auto": ["../web-component/src/types.d.ts"],
+      "@repodeckhz/web/*": ["../web-component/src/types.d.ts"]
     }
   },
   "include": ["src"],

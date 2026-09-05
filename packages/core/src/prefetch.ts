@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — prefetch.ts
+ * @repodeckhz/core — prefetch.ts
  *
  * Build-time / batch fetching. Takes a list of
  * `{ owner, repo, branch?, configPath?, include? }` and resolves them all

@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — layout.ts
+ * @repodeckhz/core — layout.ts
  *
  * Decides how screenshots are laid out.
  *  - 1 image  → `single` (cover)

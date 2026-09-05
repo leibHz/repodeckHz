@@ -1,12 +1,12 @@
 /**
  * repodeck CLI — `validate <owner>/<repo>` command.
  *
- * Reuses @repodeck/core's CardBuilder with a 12-second timeout so the probe
+ * Reuses @repodeckhz/core's CardBuilder with a 12-second timeout so the probe
  * never hangs forever. Prints a clear summary of what's present and what's
  * missing, intended for use both interactively and in CI.
  */
 
-import { CardBuilder, GitHubClient, RepoDeckError } from '@repodeck/core';
+import { CardBuilder, GitHubClient, RepoDeckError } from '@repodeckhz/core';
 
 const FIELD_LABELS = {
   resume: 'RESUME.txt        (short summary)',

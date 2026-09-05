@@ -6,15 +6,15 @@ truth is the TypeScript declarations in each package's
 
 ## Table of contents
 
-- [`@repodeck/core`](#core)
-- [`repodeck` (web component)](#web-component)
-- [`@repodeck/react`](#react)
+- [`@repodeckhz/core`](#core)
+- [`@repodeckhz/web` (web component)](#web-component)
+- [`@repodeckhz/react`](#react)
 
 ---
 
 <a id="core"></a>
 
-## `@repodeck/core`
+## `@repodeckhz/core`
 
 ```ts
 import {
@@ -50,7 +50,7 @@ import {
 
   // Errors
   RepoDeckError,
-} from '@repodeck/core';
+} from '@repodeckhz/core';
 ```
 
 ### Types
@@ -175,7 +175,7 @@ class RepoDeckError extends Error {
 
 <a id="web-component"></a>
 
-## `repodeck` (web component)
+## `@repodeckhz/web` (web component)
 
 The web component is a single Custom Element registered with the
 name `repo-deck`. Its full attribute/event surface is documented
@@ -194,7 +194,7 @@ window.RepoDeck
   .provideInlineData(cardData: CardData): void;
 
 // Or as a named export:
-import { RepoDeckAPI } from 'repodeck';
+import { RepoDeckAPI } from '@repodeckhz/web';
 ```
 
 ### Types
@@ -223,10 +223,10 @@ block in the document, or from the most recently provided
 
 <a id="react"></a>
 
-## `@repodeck/react`
+## `@repodeckhz/react`
 
 ```tsx
-import { RepoDeck, RepoDeckList } from '@repodeck/react';
+import { RepoDeck, RepoDeckList } from '@repodeckhz/react';
 
 <RepoDeck
   owner={owner}

@@ -1,10 +1,10 @@
 {
-  "name": "repodeck",
+  "name": "@repodeckhz/web",
   "version": "0.6.0",
   "description": "GitHub repos as embeddable web cards. A Custom Element that reads a config-repodeck/ folder from any repo and renders a polished card with an expandable modal. Works in any stack, no framework lock-in.",
   "type": "module",
   "license": "MIT",
-  "author": "repodeck",
+  "author": "repodeckhz",
   "repository": {
     "type": "git",
     "url": "https://github.com/leibHz/repodeck.git"
@@ -13,7 +13,7 @@
     "url": "https://github.com/leibHz/repodeck/issues"
   },
   "keywords": [
-    "repodeck",
+    "repodeckhz",
     "github",
     "card",
     "embed",
@@ -53,6 +53,9 @@
   "dependencies": {
     "isomorphic-dompurify": "^3.18.0",
     "marked": "^18.0.0"
+  },
+  "devDependencies": {
+    "@repodeckhz/core": "^0.6.0"
   },
   "publishConfig": {
     "access": "public"

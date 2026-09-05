@@ -1,10 +1,10 @@
 {
-  "name": "@repodeck/react",
+  "name": "@repodeckhz/react",
   "version": "0.6.0",
   "description": "Thin React wrapper around the repodeck web component. Gives React users a familiar <RepoDeck /> component.",
   "type": "module",
   "license": "MIT",
-  "author": "repodeck",
+  "author": "repodeckhz",
   "repository": {
     "type": "git",
     "url": "https://github.com/leibHz/repodeck.git"
@@ -13,7 +13,7 @@
     "url": "https://github.com/leibHz/repodeck/issues"
   },
   "keywords": [
-    "repodeck",
+    "repodeckhz",
     "react",
     "github",
     "card",
@@ -48,7 +48,7 @@
     "react-dom": ">=18"
   },
   "dependencies": {
-    "repodeck": "^0.6.0"
+    "@repodeckhz/web": "^0.6.0"
   },
   "tsup": {
     "entry": ["src/index.tsx"],
@@ -58,6 +58,6 @@
     "sourcemap": true,
     "clean": true,
     "treeshake": true,
-    "external": ["react", "react-dom", "repodeck", "repodeck/*"]
+    "external": ["react", "react-dom", "@repodeckhz/web", "@repodeckhz/web/*"]
   }
 }

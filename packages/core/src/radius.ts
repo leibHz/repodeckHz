@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — radius.ts
+ * @repodeckhz/core — radius.ts
  *
  * Translates the `radius` attribute (preset name OR raw CSS value) into the
  * three tokens used internally. Each token can be individually overridden via

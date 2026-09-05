@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — parser.ts
+ * @repodeckhz/core — parser.ts
  *
  * Transforms raw text from GitHub into display-ready data.
  *

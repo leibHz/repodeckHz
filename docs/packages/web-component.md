@@ -1,11 +1,11 @@
-# `repodeck` (web component)
+# `@repodeckhz/web` (web component)
 
 The main product. Ships as a single Custom Element registered with
 the name `repo-deck`. Works in any HTML page, any framework, any
 hosting. No build step required.
 
 ```html
-<script src="https://unpkg.com/repodeck@latest/dist/repodeck.js"></script>
+<script src="https://unpkg.com/@repodeckhz/web@latest/dist/repodeck.js"></script>
 <repo-deck owner="your-name" repo="your-repo" preset="standard"></repo-deck>
 ```
 
@@ -89,8 +89,8 @@ window.RepoDeck.createAnalyticsAdapter((event) => {
 });
 ```
 
-ESM consumers can `import { RepoDeckAPI } from 'repodeck'` or
-use `@repodeck/react`'s underlying web component instead.
+ESM consumers can `import { RepoDeckAPI } from '@repodeckhz/web'` or
+use `@repodeckhz/react`'s underlying web component instead.
 
 ## Layouts
 

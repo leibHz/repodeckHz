@@ -6,7 +6,7 @@
  *
  * Commands:
  *   repodeck init   — create the config-repodeck/ folder with templates
- *   repodeck validate <owner>/<repo> — perform a build-time probe via @repodeck/core
+ *   repodeck validate <owner>/<repo> — perform a build-time probe via @repodeckhz/core
  *   repodeck --help — show usage
  *
  * Exits non-zero on any failure so it composes cleanly with CI.

@@ -1,8 +1,8 @@
 {
-  "name": "repodeck",
+  "name": "repodeckhz",
   "version": "0.6.0",
   "private": true,
-  "description": "GitHub repos as embeddable web cards. A monorepo with 3 npm packages: @repodeck/core (headless), repodeck (web component), @repodeck/react (React wrapper).",
+  "description": "GitHub repos as embeddable web cards. A monorepo with 3 npm packages: @repodeckhz/core (headless), repodeck (web component), @repodeckhz/react (React wrapper).",
   "license": "MIT",
   "workspaces": [
     "packages/core",
@@ -11,10 +11,10 @@
   ],
   "scripts": {
     "build": "bun run build:packages",
-    "build:packages": "bun run --filter '@repodeck/core' build && bun run --filter 'repodeck' build && bun run --filter '@repodeck/react' build",
-    "build:core": "bun run --filter '@repodeck/core' build",
-    "build:web-component": "bun run --filter 'repodeck' build",
-    "build:react": "bun run --filter '@repodeck/react' build",
+    "build:packages": "bun run --filter '@repodeckhz/core' build && bun run --filter '@repodeckhz/web' build && bun run --filter '@repodeckhz/react' build",
+    "build:core": "bun run --filter '@repodeckhz/core' build",
+    "build:web-component": "bun run --filter '@repodeckhz/web' build",
+    "build:react": "bun run --filter '@repodeckhz/react' build",
     "clean": "bun run --filter '*' clean && rm -rf node_modules",
     "lint": "tsc --noEmit -p packages/core/tsconfig.json && tsc --noEmit -p packages/web-component/tsconfig.json"
   },

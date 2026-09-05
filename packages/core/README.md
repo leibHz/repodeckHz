@@ -1,4 +1,4 @@
-# @repodeck/core
+# @repodeckhz/core
 
 > Framework-free core for **repodeck**: fetch, parse, and build GitHub repo card data. Zero DOM, zero dependencies.
 
@@ -7,15 +7,15 @@ This is the headless heart of the repodeck package. It talks to the GitHub REST 
 ## Install
 
 ```bash
-npm install @repodeck/core
+npm install @repodeckhz/core
 # or
-bun add @repodeck/core
+bun add @repodeckhz/core
 ```
 
 ## Quick start
 
 ```ts
-import { buildCardData } from '@repodeck/core';
+import { buildCardData } from '@repodeckhz/core';
 
 const card = await buildCardData('repodeck', 'taskflow', {
   include: { readme: true, resume: true, screenshots: true },
@@ -110,7 +110,7 @@ resolveScreenshots(entries, owner, repo, branch) // → Screenshot[]
 ### Presets
 
 ```ts
-import { defaultPresets, registerPreset, getPreset, mergePresetWithUserConfig } from '@repodeck/core';
+import { defaultPresets, registerPreset, getPreset, mergePresetWithUserConfig } from '@repodeckhz/core';
 
 defaultPresets.minimal    // title + 1 cover
 defaultPresets.standard   // title + resume + screenshot cover
@@ -166,7 +166,7 @@ Pass `locale: 'pt'` and the builder tries `RESUME.pt.txt` before `RESUME.txt`, r
 In-memory singleton cache (Map) with TTL (5 min default):
 
 ```ts
-import { getCached, setCached, clearCache, buildCacheKey } from '@repodeck/core';
+import { getCached, setCached, clearCache, buildCacheKey } from '@repodeckhz/core';
 ```
 
 ## License

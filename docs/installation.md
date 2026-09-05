@@ -5,13 +5,13 @@ The package you install depends on how you plan to use repodeck.
 ## Plain HTML / web components
 
 ```sh
-npm install repodeck
+npm install @repodeckhz/web
 ```
 
 That's the only package you need to drop a card on a page:
 
 ```html
-<script src="https://unpkg.com/repodeck@latest/dist/repodeck.js"></script>
+<script src="https://unpkg.com/@repodeckhz/web@latest/dist/repodeck.js"></script>
 <repo-deck
   owner="your-name"
   repo="your-repo"
@@ -29,13 +29,13 @@ For TypeScript-flavoured props and `onLoad` / `onError` event
 handlers wired declaratively:
 
 ```sh
-npm install @repodeck/react repodeck
+npm install @repodeckhz/react @repodeckhz/web
 ```
 
 ```tsx
 'use client';
 
-import { RepoDeck } from '@repodeck/react';
+import { RepoDeck } from '@repodeckhz/react';
 
 export default function ProjectsPage() {
   return <RepoDeck owner="your-name" repo="your-repo" preset="standard" showStats />;
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
 
 The React wrapper is intentionally thin. It sets attributes on the
 underlying `<repo-deck>` element and forwards custom events to your
-component's handlers. See `@repodeck/react`'s
+component's handlers. See `@repodeckhz/react`'s
 [package docs](./packages/react.md) for the full props.
 
 ## Server-side / build-time (Next.js, Astro, Eleventy)
@@ -53,19 +53,19 @@ If you want to fetch card data at build time (or run a custom
 endpoint that proxies the GitHub API behind your token):
 
 ```sh
-npm install @repodeck/core
+npm install @repodeckhz/core
 ```
 
 The core package is the headless layer. It builds typed `CardData`
 objects and exposes them so any templating engine can render them.
-See [`@repodeck/core`](./packages/core.md) for the public API and
+See [`@repodeckhz/core`](./packages/core.md) for the public API and
 [Build-time data](./build-time.md) for the static-generation
 recipe.
 
 ## CLI
 
 The `npx repodeck init` and `npx repodeck validate <owner>/<repo>`
-commands live in the same `repodeck` package you've probably
+commands live in the same `@repodeckhz/web` package you've probably
 already installed above. If you only want the CLI:
 
 ```sh
@@ -80,7 +80,7 @@ We strongly recommend pinning a version instead of using `latest` in
 production:
 
 ```html
-<script src="https://unpkg.com/repodeck@0.6.0/dist/repodeck.js"></script>
+<script src="https://unpkg.com/@repodeckhz/web@0.6.0/dist/repodeck.js"></script>
 ```
 
 The package follows [semver](https://semver.org). Patch releases

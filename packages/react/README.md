@@ -1,19 +1,19 @@
-# @repodeck/react
+# @repodeckhz/react
 
-> Thin React wrapper around the [`repodeck`](../web-component) web component.
+> Thin React wrapper around the [`@repodeckhz/web`](../web-component) web component.
 
 Gives React users a familiar `<RepoDeck />` component instead of dealing with custom-element refs directly.
 
 ## Install
 
 ```bash
-npm install @repodeck/react repodeck
+npm install @repodeckhz/react @repodeckhz/web
 ```
 
 ## Usage
 
 ```tsx
-import { RepoDeck, RepoDeckList } from '@repodeck/react';
+import { RepoDeck, RepoDeckList } from '@repodeckhz/react';
 
 export default function Page() {
   return (

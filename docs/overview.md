@@ -15,18 +15,18 @@ itself evolves, so there is no second source of truth to keep in sync.
 ```
 repodeck/
 ├── packages/
-│   ├── core/              @repodeck/core        Headless data layer. No DOM.
-│   ├── web-component/     repodeck              <repo-deck> Custom Element.
-│   └── react/             @repodeck/react       <RepoDeck> wrapper.
+│   ├── core/              @repodeckhz/core        Headless data layer. No DOM.
+│   ├── web-component/     @repodeckhz/web      <repo-deck> Custom Element.
+│   └── react/             @repodeckhz/react       <RepoDeck> wrapper.
 ```
 
 | Package             | Install              | When to use                                                                          |
 |---------------------|----------------------|--------------------------------------------------------------------------------------|
-| `repodeck`          | `npm i repodeck`     | The default. Plain HTML, Vue, Svelte, Angular, anything with a `<script>` tag.        |
-| `@repodeck/react`   | `npm i @repodeck/react repodeck` | React users. Idiomatic `<RepoDeck owner="…" repo="…" />` JSX.                |
-| `@repodeck/core`    | `npm i @repodeck/core`       | SSR, SSG, custom templates, build-time batch fetching, server-to-server pipelines. |
+| `@repodeckhz/web`     | `npm i @repodeckhz/web`     | The default. Plain HTML, Vue, Svelte, Angular, anything with a `<script>` tag.        |
+| `@repodeckhz/react`   | `npm i @repodeckhz/react @repodeckhz/web` | React users. Idiomatic `<RepoDeck owner="…" repo="…" />` JSX.                |
+| `@repodeckhz/core`    | `npm i @repodeckhz/core`       | SSR, SSG, custom templates, build-time batch fetching, server-to-server pipelines. |
 
-If you only need a card on a page, `npm i repodeck` is enough.
+If you only need a card on a page, `npm i @repodeckhz/web` is enough.
 
 ## How a card is built
 

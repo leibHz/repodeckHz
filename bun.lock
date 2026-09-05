@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "repodeck",
+      "name": "repodeckhz",
       "devDependencies": {
         "@types/node": "^26.1.1",
         "@types/react": "^19.2.17",
@@ -15,7 +15,7 @@
       },
     },
     "packages/core": {
-      "name": "@repodeck/core",
+      "name": "@repodeckhz/core",
       "version": "0.6.0",
       "dependencies": {
         "isomorphic-dompurify": "^3.18.0",
@@ -23,10 +23,10 @@
       },
     },
     "packages/react": {
-      "name": "@repodeck/react",
+      "name": "@repodeckhz/react",
       "version": "0.6.0",
       "dependencies": {
-        "repodeck": "^0.6.0",
+        "@repodeckhz/web": "^0.6.0",
       },
       "peerDependencies": {
         "react": ">=18",
@@ -34,7 +34,7 @@
       },
     },
     "packages/web-component": {
-      "name": "repodeck",
+      "name": "@repodeckhz/web",
       "version": "0.6.0",
       "bin": {
         "repodeck": "./dist/repodeck-cli.cjs",
@@ -42,6 +42,9 @@
       "dependencies": {
         "isomorphic-dompurify": "^3.18.0",
         "marked": "^18.0.0",
+      },
+      "devDependencies": {
+        "@repodeckhz/core": "^0.6.0",
       },
     },
   },
@@ -130,9 +133,11 @@
 
     "@jridgewell/trace-mapping": ["@jridgewell/trace-mapping@0.3.31", "", { "dependencies": { "@jridgewell/resolve-uri": "^3.1.0", "@jridgewell/sourcemap-codec": "^1.4.14" } }, "sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw=="],
 
-    "@repodeck/core": ["@repodeck/core@workspace:packages/core"],
+    "@repodeckhz/core": ["@repodeckhz/core@workspace:packages/core"],
 
-    "@repodeck/react": ["@repodeck/react@workspace:packages/react"],
+    "@repodeckhz/react": ["@repodeckhz/react@workspace:packages/react"],
+
+    "@repodeckhz/web": ["@repodeckhz/web@workspace:packages/web-component"],
 
     "@rollup/rollup-android-arm-eabi": ["@rollup/rollup-android-arm-eabi@4.62.2", "", { "os": "android", "cpu": "arm" }, "sha512-6o7ZLZK+BeenkZCFNDXqpbjw9bD6nuWonvS/lwQJp7NoVVxm6p3qE7qQ5jGuBjiFsgvqjD8mZAU5oWxTmbOeOg=="],
 
@@ -287,8 +292,6 @@
     "react-dom": ["react-dom@19.2.7", "", { "dependencies": { "scheduler": "^0.27.0" }, "peerDependencies": { "react": "^19.2.7" } }, "sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ=="],
 
     "readdirp": ["readdirp@4.1.2", "", {}, "sha512-GDhwkLfywWL2s6vEjyhri+eXmfH6j1L7JE27WhqLeYzoh/A3DBaYGEj2H/HFZCn/kMfim73FXxEJTw06WtxQwg=="],
-
-    "repodeck": ["repodeck@workspace:packages/web-component"],
 
     "require-from-string": ["require-from-string@2.0.2", "", {}, "sha512-Xf0nWe6RseziFMu+Ap9biiUbmplq6S9/p+7w7YXP/JBHhrUDDUhwa+vANyubuqfZWTveU//DYVGsDG7RKL/vEw=="],
 

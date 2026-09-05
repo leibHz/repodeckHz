@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — presets.ts
+ * @repodeckhz/core — presets.ts
  *
  * Presets define "what shows on the compact card" vs "what is available in the
  * modal". Consumers can register their own preset without forking.

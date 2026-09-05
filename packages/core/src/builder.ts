@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — builder.ts
+ * @repodeckhz/core — builder.ts
  *
  * The orchestrator. `CardBuilder` takes a `GitHubClient` (dependency injection)
  * and an optional `Cache`, then builds a `CardData` object by firing only the

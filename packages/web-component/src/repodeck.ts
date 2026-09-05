@@ -26,7 +26,7 @@ import STYLES from './repodeck.css';
  * Public API:    window.RepoDeck.setLocale, .createAnalyticsAdapter, .t
  */
 
-// --- types (mirrors @repodeck/core for self-containment) -------------------
+// --- types (mirrors @repodeckhz/core for self-containment) -------------------
 
 interface Screenshot {
   url: string;
@@ -247,7 +247,7 @@ if (typeof customElements !== 'undefined' && customElements.get('repo-deck')) {
 } else if (typeof customElements !== 'undefined') {
 
 // ---------------------------------------------------------------------------
-// Small pure helpers — mirror @repodeck/core (layout, radius) so the web
+// Small pure helpers — mirror @repodeckhz/core (layout, radius) so the web
 // component stays a single self-contained file with no build step.
 // ---------------------------------------------------------------------------
 

@@ -17,11 +17,12 @@ export default defineConfig({
   resolve: {
     extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs', '.cjs'],
     alias: [
-      // Side-effect imports that auto-register the custom element. `repodeck`
-      // (main) and `repodeck/auto` both point at the sibling built bundle.
-      { find: 'repodeck/auto', replacement: REPODECK_DIST },
-      { find: 'repodeck/', replacement: REPODECK_DIST },
-      { find: 'repodeck', replacement: REPODECK_DIST },
+      // Side-effect imports that auto-register the custom element. The
+      // `@repodeckhz/web` main and `@repodeckhz/web/auto` subpath both point
+      // at the sibling built bundle.
+      { find: '@repodeckhz/web/auto', replacement: REPODECK_DIST },
+      { find: '@repodeckhz/web/', replacement: REPODECK_DIST },
+      { find: '@repodeckhz/web', replacement: REPODECK_DIST },
     ],
   },
   esbuild: {

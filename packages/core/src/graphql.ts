@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — graphql.ts
+ * @repodeckhz/core — graphql.ts
  *
  * Experimental GitHub GraphQL batch fetch (plan §16.6).
  *

@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — github-client.ts
+ * @repodeckhz/core — github-client.ts
  *
  * All communication with the GitHub REST API. Encapsulated in a `GitHubClient`
  * class so consumers can configure token/retry/timeout once and inject the

@@ -6,7 +6,7 @@
  * works under both Node ESM (`npx`) and `node ./repodeck-cli.cjs`.
  *
  * `marked` and `isomorphic-dompurify` stay external: they pull in jsdom
- * (~10 MB unminified) and are lazy-loaded by @repodeck/core anyway. They are
+ * (~10 MB unminified) and are lazy-loaded by @repodeckhz/core anyway. They are
  * declared as runtime dependencies in package.json, so they resolve from
  * node_modules at runtime.
  *

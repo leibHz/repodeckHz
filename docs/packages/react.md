@@ -1,4 +1,4 @@
-# `@repodeck/react`
+# `@repodeckhz/react`
 
 Thin React wrapper around the `<repo-deck>` Custom Element. Provides
 typed props and idiomatic event handlers instead of having to manage
@@ -6,10 +6,10 @@ attribute strings and event listeners yourself.
 
 ## Install
 
-This package depends on `repodeck`. Install both:
+This package depends on `@repodeckhz/web`. Install both:
 
 ```sh
-npm install @repodeck/react repodeck
+npm install @repodeckhz/react @repodeckhz/web
 ```
 
 ## Usage
@@ -17,7 +17,7 @@ npm install @repodeck/react repodeck
 ```tsx
 'use client';
 
-import { RepoDeck } from '@repodeck/react';
+import { RepoDeck } from '@repodeckhz/react';
 
 export function Portfolio() {
   return (
@@ -106,7 +106,7 @@ There's a companion export for the `<repodeck-list>` element. Same
 approach (typed props, fewer event handlers):
 
 ```tsx
-import { RepoDeckList } from '@repodeck/react';
+import { RepoDeckList } from '@repodeckhz/react';
 
 export function MyProjects() {
   return (

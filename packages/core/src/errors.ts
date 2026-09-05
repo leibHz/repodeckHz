@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — errors.ts
+ * @repodeckhz/core — errors.ts
  *
  * Single typed error used across the whole package so consumers can branch on
  * `error.code` instead of parsing message strings.

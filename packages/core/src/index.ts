@@ -1,5 +1,5 @@
 /**
- * @repodeck/core — public barrel.
+ * @repodeckhz/core — public barrel.
  *
  * Server-side entry point. Bundles every core module so the API route and any
  * headless consumer can `import { ... } from '@/lib/repodeck/core'`.

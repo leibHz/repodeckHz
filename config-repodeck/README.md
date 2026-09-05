@@ -14,14 +14,14 @@ The card fetches everything from the GitHub API and renders it. Click the card t
 
 | Package | What it does |
 |---|---|
-| `@repodeck/core` | Headless data layer. Fetches and parses config-repodeck/ contents. No DOM, no framework. |
-| `repodeck` | The `<repo-deck>` Custom Element. Works in any stack. |
-| `@repodeck/react` | `<RepoDeck />` wrapper for React projects. |
+| `@repodeckhz/core` | Headless data layer. Fetches and parses config-repodeck/ contents. No DOM, no framework. |
+| `@repodeckhz/web` | The `<repo-deck>` Custom Element. Works in any stack. |
+| `@repodeckhz/react` | `<RepoDeck />` wrapper for React projects. |
 
 ## Usage
 
 ```html
-<script src="https://unpkg.com/repodeck@latest/dist/repodeck.js"></script>
+<script src="https://unpkg.com/@repodeckhz/web@latest/dist/repodeck.js"></script>
 
 <repo-deck
   owner="your-name"
