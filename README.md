@@ -1,6 +1,6 @@
 # repodeck
 
-> **Beta.** This project is in an early stage — APIs and behavior may change, and bugs are possible. Test before relying on it in production.
+> **Beta.** This project is in an early stage. APIs and behavior may change, and bugs are possible. Test before relying on it in production.
 
 GitHub repos as embeddable web cards.
 

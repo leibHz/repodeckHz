@@ -1,6 +1,6 @@
 {
   "name": "@repodeckhz/web",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "GitHub repos as embeddable web cards. A Custom Element that reads a config-repodeck/ folder from any repo and renders a polished card with an expandable modal. Works in any stack, no framework lock-in.",
   "type": "module",
   "license": "MIT",

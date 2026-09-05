@@ -1,13 +1,13 @@
 /**
  * repodeck CLI entry point.
  *
- * Tiny command dispatcher — keeps the CLI dependency-free (no commander /
+ * Tiny command dispatcher - keeps the CLI dependency-free (no commander /
  * yargs) so it ships without security/supply-chain surface area.
  *
  * Commands:
- *   repodeck init   — create the config-repodeck/ folder with templates
- *   repodeck validate <owner>/<repo> — perform a build-time probe via @repodeckhz/core
- *   repodeck --help — show usage
+ *   repodeck init   - create the config-repodeck/ folder with templates
+ *   repodeck validate <owner>/<repo> - perform a build-time probe via @repodeckhz/core
+ *   repodeck --help - show usage
  *
  * Exits non-zero on any failure so it composes cleanly with CI.
  *

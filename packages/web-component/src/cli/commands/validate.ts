@@ -1,5 +1,5 @@
 /**
- * repodeck CLI — `validate <owner>/<repo>` command.
+ * repodeck CLI - `validate <owner>/<repo>` command.
  *
  * Reuses @repodeckhz/core's CardBuilder with a 12-second timeout so the probe
  * never hangs forever. Prints a clear summary of what's present and what's
@@ -45,7 +45,7 @@ export async function runValidate({ owner, repo, token, stdout, stderr }) {
   for (const key of fields) {
     const value = card[key];
     if (value == null) {
-      stdout.write(bad(`${FIELD_LABELS[key]} — missing`));
+      stdout.write(bad(`${FIELD_LABELS[key]} - missing`));
       stdout.write('\n');
       warnings++;
       continue;
@@ -54,17 +54,17 @@ export async function runValidate({ owner, repo, token, stdout, stderr }) {
       const e = value.error;
       const hint =
         e.code === 'NOT_FOUND' ? 'file not found' :
-        e.code === 'RATE_LIMITED' ? 'GitHub API rate limit hit — set GITHUB_TOKEN for more' :
+        e.code === 'RATE_LIMITED' ? 'GitHub API rate limit hit - set GITHUB_TOKEN for more' :
         e.code === 'UNAUTHORIZED' ? 'token invalid or expired' :
         e.code === 'NETWORK_ERROR' ? 'network error' :
         'unexpected error';
-      stdout.write(bad(`${FIELD_LABELS[key]} — ${hint}\n        ${e.message}`));
+      stdout.write(bad(`${FIELD_LABELS[key]} - ${hint}\n        ${e.message}`));
       stdout.write('\n');
       warnings++;
       continue;
     }
     if (key === 'screenshots') {
-      stdout.write(ok(`${FIELD_LABELS[key]} — ${value.length} image(s)`));
+      stdout.write(ok(`${FIELD_LABELS[key]} - ${value.length} image(s)`));
       stdout.write('\n');
       if (value.length === 0) {
         stdout.write(info('(the card will show a generated fallback cover)'));
@@ -73,10 +73,10 @@ export async function runValidate({ owner, repo, token, stdout, stderr }) {
     } else if (key === 'resume') {
       const len = value.text.length;
       const trunc = value.truncated ? ' (will be truncated at 280 chars on the card face)' : '';
-      stdout.write(ok(`${FIELD_LABELS[key]} — ${len} chars${trunc}`));
+      stdout.write(ok(`${FIELD_LABELS[key]} - ${len} chars${trunc}`));
       stdout.write('\n');
     } else {
-      stdout.write(ok(`${FIELD_LABELS[key]} — ${value.html.length} chars of HTML`));
+      stdout.write(ok(`${FIELD_LABELS[key]} - ${value.html.length} chars of HTML`));
       stdout.write('\n');
       if (value.frontmatter && Object.keys(value.frontmatter).length) {
         stdout.write(info(`frontmatter: ${JSON.stringify(value.frontmatter)}`));
@@ -90,7 +90,7 @@ export async function runValidate({ owner, repo, token, stdout, stderr }) {
     stdout.write(`\u001b[32m✔ config-repodeck/ looks healthy in ${owner}/${repo}.\u001b[0m\n`);
     return 0;
   }
-  stdout.write(warn(`${warnings} issue${warnings === 1 ? '' : 's'} found — the card still works (missing fields are reported, not crashing the build).`));
+  stdout.write(warn(`${warnings} issue${warnings === 1 ? '' : 's'} found - the card still works (missing fields are reported, not crashing the build).`));
   stdout.write('\n');
   return warnings === fields.length ? 2 : 0;
 }

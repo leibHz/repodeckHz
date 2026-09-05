@@ -16,8 +16,8 @@ npx repodeck init
 #   └── screenshots/
 #
 # Next steps:
-#   1. Edit config-repodeck/README.md — markdown, sanitised before rendering in the modal.
-#   2. Edit config-repodeck/RESUME.txt — keep it under 280 chars; longer text is truncated.
+#   1. Edit config-repodeck/README.md - markdown, sanitised before rendering in the modal.
+#   2. Edit config-repodeck/RESUME.txt - keep it under 280 chars; longer text is truncated.
 #   3. Drop project screenshots into config-repodeck/screenshots/. Supported: png, jpg, jpeg, webp, gif, svg.
 #   4. Commit and push. Then run:  npx repodeck validate <owner>/<repo>
 ```
@@ -52,14 +52,14 @@ and prints a field-by-field report. Reuses `@repodeckhz/core`'s
 npx repodeck validate facebook/react
 # Probing facebook/react for a config-repodeck/ folder...
 #
-#   ✘ RESUME.txt        (short summary)   — file not found
+#   ✘ RESUME.txt        (short summary)   - file not found
 #       RESUME.txt not found in config folder.
-#   ✘ README.md         (full readme)     — file not found
+#   ✘ README.md         (full readme)     - file not found
 #       README.md not found in config folder.
-#   ✔ screenshots/   (image folder) — 0 image(s)
+#   ✔ screenshots/   (image folder) - 0 image(s)
 #       (the card will show a generated fallback cover)
 #
-#   ! 2 issues found — the card still works (missing fields are reported, not crashing the build).
+#   ! 2 issues found - the card still works (missing fields are reported, not crashing the build).
 ```
 
 Use `GITHUB_TOKEN` (or `GH_TOKEN`) to raise the request budget for
