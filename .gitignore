@@ -62,3 +62,6 @@ server.log
 
 # npm publish artifacts
 .npmrc
+
+# Personal GitHub profile README (not part of this repo)
+/profile-README.md

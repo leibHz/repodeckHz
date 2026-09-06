@@ -1,16 +1,17 @@
 {
   "name": "@repodeckhz/react",
-  "version": "0.6.0",
-  "description": "Thin React wrapper around the repodeck web component. Gives React users a familiar <RepoDeck /> component.",
+  "version": "0.6.2",
+"description": "Thin React wrapper around the repodeckhz web component. Gives React users a familiar <RepoDeck /> component.",
   "type": "module",
   "license": "MIT",
-  "author": "repodeckhz",
+  "author": "leibHz",
+  "homepage": "https://github.com/leibHz/repodeckHz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leibHz/repodeck.git"
+    "url": "https://github.com/leibHz/repodeckHz.git"
   },
   "bugs": {
-    "url": "https://github.com/leibHz/repodeck/issues"
+    "url": "https://github.com/leibHz/repodeckHz/issues"
   },
   "keywords": [
     "repodeckhz",
@@ -18,6 +19,9 @@
     "github",
     "card",
     "embed",
+    "web-component",
+    "custom-element",
+    "jsx",
     "portfolio"
   ],
   "exports": {

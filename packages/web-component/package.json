@@ -1,16 +1,17 @@
 {
   "name": "@repodeckhz/web",
-  "version": "0.6.1",
-  "description": "GitHub repos as embeddable web cards. A Custom Element that reads a config-repodeck/ folder from any repo and renders a polished card with an expandable modal. Works in any stack, no framework lock-in.",
+  "version": "0.6.2",
+"description": "GitHub repos as embeddable web cards. A Custom Element that reads a config-repodeck/ folder from any repo and renders a card with an expandable modal. Works in any stack, no framework lock-in.",
   "type": "module",
   "license": "MIT",
-  "author": "repodeckhz",
+  "author": "leibHz",
+  "homepage": "https://github.com/leibHz/repodeckHz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/leibHz/repodeck.git"
+    "url": "https://github.com/leibHz/repodeckHz.git"
   },
   "bugs": {
-    "url": "https://github.com/leibHz/repodeck/issues"
+    "url": "https://github.com/leibHz/repodeckHz/issues"
   },
   "keywords": [
     "repodeckhz",
@@ -19,6 +20,8 @@
     "embed",
     "web-component",
     "custom-element",
+    "web-components",
+    "markdown",
     "portfolio",
     "showcase"
   ],
